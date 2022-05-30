@@ -1,0 +1,4 @@
+First check if the Pods are up and running properly - kubectl get po -o wide
+Next check if service is running properly with NodePort displayed properly -> kubectl get svc
+With given cluster IP you can check to access the app via Port 8000 - curl http://<CLusterIP>:8000
+Next check for external IP and node port-> curl http://<External IP>:31000
