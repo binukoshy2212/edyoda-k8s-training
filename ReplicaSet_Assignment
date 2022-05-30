@@ -1,0 +1,3 @@
+Q) Write a common use-case, where you will use a daemon set instead of replica set.
+
+A) In case of having system/node health monitoring apps, we can go for daemon set as it will ensure only 1 is running on a node which is only required
