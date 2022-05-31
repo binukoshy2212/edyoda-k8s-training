@@ -1,0 +1,17 @@
+1) What are the differences file-wise? --> Kind is different and in case of ReplicaSet, matchLabels is mandatory
+
+2) Run the kubia-replicaset.yaml . --> Executed
+
+3)Identify what commands can be run after "kubectl apply...." --> 
+kubectl apply -f filename
+kubectl apply -k directory
+kubectl apply --prune
+edit-last-applied
+set-last-applied
+view-last-applied
+
+
+4)Make a service over these pods (kubia-replicaset) and see if the service picks up the web-service within the pod ("You have hit....." message) --> Done
+
+5)Negative Testing : change the labels of the pod and see if the service is still applied on those pods --> Yes, since the Pods are started using ReplicaSet, k8s will 
+new Pods having original label which will be used by the service
