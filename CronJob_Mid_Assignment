@@ -1,0 +1,14 @@
+1) go to cronjob.yaml (/root/kubernetes-training/04-controllers) --> Done
+2) Open the file and change the 1st line to (apiVersion: batch/v1beta1).--> Done
+3) Run this file --> Done
+4) Find out what is the command to "get" the running jobs. --> kubectl get cronjobs
+5) Observe and if possible, paste the results from your practicals.
+[root@ip-172-31-18-178 04-controllers]# kubectl get cronjobs
+NAME                              SCHEDULE             SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+batch-job-every-fifteen-minutes   0,15,30,45 * * * *   False     1        29s             10m
+[root@ip-172-31-18-178 04-controllers]# kubectl get cronjobs
+NAME                              SCHEDULE             SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+batch-job-every-fifteen-minutes   0,15,30,45 * * * *   False     0        2m44s           13m
+
+6) Also identify how you would "permanently arrest" the jobs from running. --> update with spec - suspend = true
+7) What is the change from normal Jobs (jobs v/s cronJobs) - Your observation in one sentence. --> Kind is different and schedule is added in Cron Job
