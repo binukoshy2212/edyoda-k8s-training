@@ -1,0 +1,23 @@
+1. Commands that you used during the assignment.
+--> kubectl create -f k8s-specifications/
+
+
+2. snapshot of logs (wherever possible)
+---> [root@ip-172-31-25-21 example-voting-app]# kubectl get pod
+NAME                      READY   STATUS    RESTARTS   AGE
+db-b54cd94f4-mp87x        1/1     Running   0          5d19h
+redis-868d64d78-pmdp8     1/1     Running   0          5d19h
+result-5d57b59f4b-ncdbd   1/1     Running   0          5d19h
+vote-94849dc97-49p47      1/1     Running   0          5d19h
+worker-dd46d7584-5vgz7    1/1     Running   0          5d19h
+
+3. your comment on WHY result app STOPPED working after db pod stop
+result app has opened static connection session with DB. Once DB pod stopped, result app is still using the old session which is no more valid
+--> Hence result app will not receive any more data.
+
+4. your answer to HOW YOU MADE THE RESULT POD work. 
+--> Easy way - Restarted result pod again. When result pod comes up it will reinitate connection with db again and get the results
+
+5. Some jargons (just names are enough- dont need sentences) that you learnt from the 40-hour Training session
+--> Kubectl, kubelet, kube-proxy, controller, api-server, scheduler, pod, worker, master, ReplicaController, ReplicaSet, Job, CronJob, NodePort, service, Deployment, 
+calico, hostnetowrk, proxy, envoy, pvc, pv, Stateful Set, daemon set, istdio, RBAC, secrets
